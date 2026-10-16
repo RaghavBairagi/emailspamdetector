@@ -1,0 +1,55 @@
+:root {
+  --bg: #0d0b1e; --card: rgba(255,255,255,.06); --line: rgba(255,255,255,.12);
+  --text: #f3f1ff; --muted: #a8a3c7; --accent: #8b7cff; --accent2: #5ee7df;
+  --spam: #ff6b8b; --ham: #4be3ac;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font-family: Inter, system-ui, sans-serif; }
+.page { min-height: 100vh; position: relative; overflow: hidden; }
+.blob { position: absolute; border-radius: 50%; filter: blur(110px); opacity: .45; z-index: 0; }
+.b1 { width: 460px; height: 460px; background: #6d4aff; top: -120px; left: -100px; }
+.b2 { width: 400px; height: 400px; background: #00c2c7; bottom: -120px; right: -80px; }
+.shell { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; padding: 56px 16px 40px; }
+header { text-align: center; margin-bottom: 28px; }
+.logo { font-size: 40px; }
+h1 { font-family: Fraunces, serif; font-size: 44px; margin: 6px 0; letter-spacing: -.5px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+header p { color: var(--muted); margin: 0; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 22px;
+  backdrop-filter: blur(18px); margin-bottom: 20px; box-shadow: 0 20px 50px rgba(0,0,0,.25); animation: rise .5s ease; }
+@keyframes rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+.samples { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+button { font: inherit; cursor: pointer; border-radius: 12px; transition: .2s; }
+.ghost { background: transparent; color: var(--muted); border: 1px solid var(--line); padding: 6px 12px; font-size: 13px; }
+.ghost:hover { color: var(--text); border-color: var(--accent); }
+textarea { width: 100%; background: rgba(0,0,0,.25); border: 1px solid var(--line); border-radius: 14px;
+  color: var(--text); padding: 14px; font: inherit; resize: vertical; outline: none; }
+textarea:focus { border-color: var(--accent); }
+.primary { margin-top: 14px; width: 100%; padding: 13px; border: 0; color: #120f2b; font-weight: 600;
+  background: linear-gradient(90deg, var(--accent), var(--accent2)); }
+.primary:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(139,124,255,.4); }
+.primary:disabled { opacity: .45; cursor: not-allowed; }
+.error { color: var(--spam); margin: 12px 0 0; }
+.verdict { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+.gauge { width: 230px; }
+.gauge-track, .gauge-fill { fill: none; stroke-width: 14; stroke-linecap: round; }
+.gauge-track { stroke: rgba(255,255,255,.1); }
+.gauge-fill { transition: stroke-dasharray .8s ease; }
+.gauge-num { fill: var(--text); font-size: 28px; font-weight: 600; }
+.gauge-label { fill: var(--muted); font-size: 9px; }
+.badge { display: inline-block; padding: 6px 14px; border-radius: 999px; font-weight: 600; font-size: 14px; }
+.is-spam .badge { background: rgba(255,107,139,.18); color: var(--spam); }
+.is-ham .badge { background: rgba(75,227,172,.18); color: var(--ham); }
+.hint { color: var(--muted); margin: 10px 0 0; }
+.bars { margin: 18px 0; display: grid; gap: 10px; }
+.bar-row { display: grid; grid-template-columns: 110px 1fr 56px; gap: 10px; align-items: center; font-size: 14px; color: var(--muted); }
+.bar { height: 8px; background: rgba(255,255,255,.1); border-radius: 99px; overflow: hidden; }
+.bar i { display: block; height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent2)); transition: width .8s ease; }
+.bar-row b { color: var(--text); text-align: right; }
+.chips-block h4 { margin: 14px 0 8px; font-size: 13px; color: var(--muted); font-weight: 500; text-transform: uppercase; letter-spacing: .08em; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { padding: 4px 12px; border-radius: 999px; font-size: 13px; border: 1px solid; }
+.chip.spam { color: var(--spam); border-color: rgba(255,107,139,.4); background: rgba(255,107,139,.08); }
+.chip.ham { color: var(--ham); border-color: rgba(75,227,172,.4); background: rgba(75,227,172,.08); }
+footer { text-align: center; color: var(--muted); font-size: 12px; margin-top: 28px; }
+@media (max-width: 520px) { h1 { font-size: 34px; } .bar-row { grid-template-columns: 90px 1fr 50px; } }

@@ -1,0 +1,38 @@
+{
+  "Naive Bayes (scratch)": {
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "confusion": {
+      "tn": 140,
+      "fp": 0,
+      "fn": 0,
+      "tp": 100
+    }
+  },
+  "Naive Bayes (sklearn)": {
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "confusion": {
+      "tn": 140,
+      "fp": 0,
+      "fn": 0,
+      "tp": 100
+    }
+  },
+  "Neural Network (MLP)": {
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "confusion": {
+      "tn": 140,
+      "fp": 0,
+      "fn": 0,
+      "tp": 100
+    }
+  }
+}
